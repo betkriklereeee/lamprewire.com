@@ -3,245 +3,247 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LampRewire.com — Style Guide</title>
+<title>LampRewire.com</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --dark: #2B2520;
-    --brass: #B8860B;
-    --gold: #E8C97A;
-    --ivory: #FAF6EE;
-    --taupe: #8B7355;
-    --white: #ffffff;
-    --border: #D4BC82;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--ivory); font-family: 'Inter', sans-serif; color: var(--dark); }
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --dark:#2B2520;
+  --brass:#B8860B;
+  --gold:#E8C97A;
+  --ivory:#FAF6EE;
+  --taupe:#8B7355;
+  --border:#D4BC82;
+  --white:#ffffff;
+}
+body{font-family:'Inter',sans-serif;color:var(--dark);background:var(--ivory)}
 
-  /* NAV */
-  nav {
-    background: var(--dark);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--gold); letter-spacing: .02em; }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { color: var(--ivory); font-size: .85rem; text-decoration: none; letter-spacing: .06em; text-transform: uppercase; opacity: .85; transition: opacity .2s; }
-  .nav-links a:hover { opacity: 1; color: var(--gold); }
+/* NAV */
+nav{background:var(--dark);padding:1.1rem 4%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--gold);letter-spacing:.02em;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--ivory);font-size:.78rem;text-decoration:none;letter-spacing:.08em;text-transform:uppercase;opacity:.8;transition:all .2s}
+.nav-links a:hover{opacity:1;color:var(--gold)}
+.nav-cta{background:var(--brass);color:var(--ivory) !important;padding:.45rem 1.1rem;border-radius:2px;opacity:1 !important}
+.nav-cta:hover{background:#9a7009 !important}
 
-  /* SECTIONS */
-  section { padding: 4rem 2rem; max-width: 960px; margin: 0 auto; }
-  .section-label { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--taupe); margin-bottom: 1rem; }
+/* HERO */
+.hero{background:var(--dark);padding:7rem 4% 6rem;text-align:center}
+.hero-inner{max-width:700px;margin:0 auto}
+.eyebrow{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5.5vw,3.8rem);color:var(--ivory);line-height:1.15;margin-bottom:1.25rem}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero p{font-size:1.05rem;color:#c0b09a;line-height:1.85;max-width:500px;margin:0 auto 2.5rem}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--dark);font-family:'Inter',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 2rem;border:none;border-radius:2px;cursor:pointer;transition:background .2s}
+.btn-primary:hover{background:#d4b560}
+.btn-ghost{background:transparent;color:var(--ivory);font-family:'Inter',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 2rem;border:1.5px solid rgba(255,255,255,.35);border-radius:2px;cursor:pointer;transition:all .2s}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
 
-  /* STYLE GUIDE GRID */
-  .sg-block { margin-bottom: 3rem; }
-  .sg-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--dark); margin-bottom: 1rem; padding-bottom: .5rem; border-bottom: 1px solid var(--border); }
+/* TRUST BAR */
+.trust-bar{background:var(--brass);padding:.9rem 4%;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
+.trust-item{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ivory);opacity:.92}
 
-  /* COLORS */
-  .swatches { display: flex; gap: 12px; flex-wrap: wrap; }
-  .swatch { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-  .chip { width: 80px; height: 56px; border-radius: 8px; border: 1px solid rgba(0,0,0,.08); }
-  .chip-label { font-size: 11px; color: var(--taupe); font-family: monospace; }
-  .chip-name { font-size: 11px; color: var(--dark); }
+/* SERVICES */
+.services{background:var(--white);border-top:3px solid var(--gold)}
+.services-inner{max-width:960px;margin:0 auto;padding:5rem 4%}
+.section-label{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--taupe);margin-bottom:.75rem}
+.section-heading{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--dark);margin-bottom:.75rem}
+.section-sub{font-size:.95rem;color:var(--taupe);line-height:1.7;max-width:480px;margin-bottom:3rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.card{border:1px solid var(--border);border-radius:4px;padding:2rem;background:var(--ivory);transition:border-color .2s}
+.card:hover{border-color:var(--brass)}
+.card-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);margin-bottom:1rem;line-height:1}
+.card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--dark);margin-bottom:.6rem}
+.card p{font-size:.875rem;color:var(--taupe);line-height:1.7}
 
-  /* TYPOGRAPHY */
-  .type-sample { margin-bottom: 1.25rem; }
-  .type-meta { font-size: 11px; color: var(--taupe); margin-bottom: .25rem; letter-spacing: .04em; }
+/* WHY US */
+.why{background:var(--dark);padding:5rem 4%}
+.why-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.why-text .section-heading{color:var(--ivory)}
+.why-text .section-sub{color:#b0a090;max-width:100%}
+.why-list{list-style:none;display:flex;flex-direction:column;gap:1.25rem;margin-top:2rem}
+.why-list li{display:flex;gap:1rem;align-items:flex-start}
+.why-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);margin-top:6px;flex-shrink:0}
+.why-list p{font-size:.9rem;color:#c0b09a;line-height:1.7}
+.why-list strong{display:block;font-size:.95rem;color:var(--ivory);margin-bottom:.2rem;font-weight:500}
+.why-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.stat-card{background:rgba(255,255,255,.05);border:1px solid rgba(232,201,122,.2);border-radius:4px;padding:1.75rem;text-align:center}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--gold);line-height:1;margin-bottom:.4rem}
+.stat-label{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#9a8a7a}
 
-  /* BUTTONS */
-  .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
-  .btn-primary { background: var(--dark); color: var(--gold); font-family: 'Inter', sans-serif; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; padding: .75rem 2rem; border: none; border-radius: 2px; cursor: pointer; transition: background .2s; }
-  .btn-primary:hover { background: #3d342d; }
-  .btn-outline { background: transparent; color: var(--dark); font-family: 'Inter', sans-serif; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; padding: .75rem 2rem; border: 1.5px solid var(--dark); border-radius: 2px; cursor: pointer; transition: all .2s; }
-  .btn-outline:hover { background: var(--dark); color: var(--gold); }
-  .btn-brass { background: var(--brass); color: var(--ivory); font-family: 'Inter', sans-serif; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; padding: .75rem 2rem; border: none; border-radius: 2px; cursor: pointer; transition: background .2s; }
-  .btn-brass:hover { background: #9a7009; }
+/* FAQ */
+.faq{background:var(--ivory);padding:5rem 4%}
+.faq-inner{max-width:700px;margin:0 auto}
+.faq-items{margin-top:2.5rem}
+.faq-item{border-bottom:1px solid var(--border);padding:1.4rem 0}
+.faq-q{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--dark);margin-bottom:.5rem}
+.faq-a{font-size:.875rem;color:var(--taupe);line-height:1.75}
+.faq-link{display:inline-block;margin-top:2rem;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:2px}
+.faq-link:hover{color:var(--dark);border-color:var(--dark)}
 
-  /* CARDS */
-  .card-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
-  .card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 1.5rem; }
-  .card-icon { width: 36px; height: 36px; background: var(--gold); border-radius: 50%; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; }
-  .card h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; margin-bottom: .5rem; color: var(--dark); }
-  .card p { font-size: .875rem; color: var(--taupe); line-height: 1.6; }
+/* CTA BANNER */
+.cta-banner{background:var(--gold);padding:5rem 4%;text-align:center}
+.cta-banner h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--dark);margin-bottom:.75rem}
+.cta-banner p{font-size:.95rem;color:#5a4520;line-height:1.7;max-width:440px;margin:0 auto 2rem}
+.btn-dark{background:var(--dark);color:var(--gold);font-family:'Inter',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 2.25rem;border:none;border-radius:2px;cursor:pointer;transition:background .2s}
+.btn-dark:hover{background:#3d342d}
 
-  /* DIVIDER */
-  .divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+/* FOOTER */
+footer{background:var(--dark);padding:3rem 4%;text-align:center}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gold);margin-bottom:.75rem}
+.footer-links{display:flex;justify-content:center;gap:2rem;list-style:none;margin-bottom:1.5rem;flex-wrap:wrap}
+.footer-links a{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#8a7a6a;text-decoration:none}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{font-size:.72rem;color:#5a4a3a;letter-spacing:.04em}
 
-  /* HERO POC */
-  .hero {
-    background: var(--dark);
-    padding: 6rem 2rem;
-    text-align: center;
-  }
-  .hero-inner { max-width: 680px; margin: 0 auto; }
-  .hero-eyebrow { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
-  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); color: var(--ivory); line-height: 1.2; margin-bottom: 1.25rem; }
-  .hero h1 em { color: var(--gold); font-style: italic; }
-  .hero p { font-size: 1rem; color: #c9bfb0; line-height: 1.8; margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; }
-  .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-
-  /* SERVICES STRIP */
-  .services-strip { background: var(--white); border-top: 3px solid var(--gold); border-bottom: 1px solid var(--border); }
-  .services-strip section { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
-  .service-item { padding: 2rem; border-right: 1px solid var(--border); text-align: center; }
-  .service-item:last-child { border-right: none; }
-  .service-item h3 { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: .5rem; color: var(--dark); }
-  .service-item p { font-size: .8rem; color: var(--taupe); line-height: 1.6; }
-
-  /* FAQ PREVIEW */
-  .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
-  .faq-q { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--dark); margin-bottom: .5rem; }
-  .faq-a { font-size: .875rem; color: var(--taupe); line-height: 1.7; }
-
-  /* FOOTER */
-  footer { background: var(--dark); padding: 2rem; text-align: center; }
-  footer p { font-size: .75rem; color: #8a7a6a; letter-spacing: .06em; }
-  footer span { color: var(--gold); }
+@media(max-width:680px){
+  .why-inner{grid-template-columns:1fr;gap:3rem}
+  .why-stat-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="logo">LampRewire</div>
+  <a class="logo" href="#">LampRewire</a>
   <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">New York, NY</p>
+    <h1>Bringing your fixtures<br>back to <em>life.</em></h1>
+    <p>Expert lamp rewiring, antique restoration, and chandelier repair — handled by a head technician who takes the time to get it right.</p>
+    <div class="hero-btns">
+      <button class="btn-primary">Schedule a Drop-off</button>
+      <button class="btn-ghost">Our Services</button>
+    </div>
+  </div>
+</div>
+
+<div class="trust-bar">
+  <span class="trust-item">Free Estimates</span>
+  <span class="trust-item">No Commitment Required</span>
+  <span class="trust-item">2-Day Turnaround</span>
+  <span class="trust-item">Drop-off Service</span>
+</div>
+
+<div class="services">
+  <div class="services-inner">
+    <p class="section-label">What we do</p>
+    <h2 class="section-heading">Every fixture deserves<br>expert hands.</h2>
+    <p class="section-sub">We specialize in the repairs most shops won't touch — from delicate antiques to grand chandeliers.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-num">01</div>
+        <h3>Lamp Rewire & Repair</h3>
+        <p>Full rewiring and socket replacement for table lamps, floor lamps, and wall sconces. Done safely and to code.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">02</div>
+        <h3>Antiques & Vintage Repair</h3>
+        <p>Careful restoration of antique and vintage fixtures — preserving their original character while bringing them back to full function.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">03</div>
+        <h3>Chandelier Repair</h3>
+        <p>Full-service chandelier inspection, rewiring, and crystal or shade replacement. We handle pieces of every size and complexity.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="why">
+  <div class="why-inner">
+    <div class="why-text">
+      <p class="section-label" style="color:var(--gold)">Why choose us</p>
+      <h2 class="section-heading">The care your fixture deserves.</h2>
+      <ul class="why-list">
+        <li>
+          <div class="why-dot"></div>
+          <div><strong>Personal attention on every job</strong><p>Our head technician personally reviews each repair and calls you to walk through the findings before any work begins.</p></div>
+        </li>
+        <li>
+          <div class="why-dot"></div>
+          <div><strong>Fast, honest turnaround</strong><p>Most repairs are completed within 2 days. No upselling, no runaround — just straightforward service.</p></div>
+        </li>
+        <li>
+          <div class="why-dot"></div>
+          <div><strong>Free estimates, no pressure</strong><p>We assess your fixture and give you a full breakdown at no cost. You decide what happens next.</p></div>
+        </li>
+      </ul>
+    </div>
+    <div class="why-stat-grid">
+      <div class="stat-card">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Day turnaround</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Services offered</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">$0</div>
+        <div class="stat-label">Estimate cost</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Head technician</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="faq">
+  <div class="faq-inner">
+    <p class="section-label">Common questions</p>
+    <h2 class="section-heading">Good to know<br>before you visit.</h2>
+    <div class="faq-items">
+      <div class="faq-item">
+        <p class="faq-q">Do you offer pickup or delivery?</p>
+        <p class="faq-a">We are a drop-off service only. Please bring your fixture directly to our shop — we do not offer pickup or delivery at this time.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How do I get started?</p>
+        <p class="faq-a">Give us a call to schedule your drop-off. We'll find a time that works and make sure we're ready for your piece when you arrive.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How long will my repair take?</p>
+        <p class="faq-a">Most repairs have a 2-day estimated turnaround. After your fixture is assessed, our head technician will call you personally to discuss the repair and timeline.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Is there a fee for an estimate?</p>
+        <p class="faq-a">Estimates are completely free and come with no commitment. We'll assess your fixture and give you a full breakdown before any work begins.</p>
+      </div>
+    </div>
+    <a href="#" class="faq-link">View all FAQs &rarr;</a>
+  </div>
+</div>
+
+<div class="cta-banner">
+  <h2>Ready to bring your fixture back to life?</h2>
+  <p>Drop-off service only. Call us to schedule — estimates are free with no commitment required.</p>
+  <button class="btn-dark">Call to Schedule</button>
+</div>
+
+<footer>
+  <div class="footer-logo">LampRewire</div>
+  <ul class="footer-links">
     <li><a href="#">Home</a></li>
     <li><a href="#">About</a></li>
     <li><a href="#">Services</a></li>
     <li><a href="#">FAQ</a></li>
     <li><a href="#">Contact</a></li>
   </ul>
-</nav>
-
-<!-- STYLE GUIDE -->
-<section>
-  <p class="section-label">Style Guide</p>
-
-  <!-- COLORS -->
-  <div class="sg-block">
-    <p class="sg-title">Color Palette</p>
-    <div class="swatches">
-      <div class="swatch"><div class="chip" style="background:#2B2520"></div><div class="chip-label">#2B2520</div><div class="chip-name">Dark Walnut</div></div>
-      <div class="swatch"><div class="chip" style="background:#B8860B"></div><div class="chip-label">#B8860B</div><div class="chip-name">Brass</div></div>
-      <div class="swatch"><div class="chip" style="background:#E8C97A"></div><div class="chip-label">#E8C97A</div><div class="chip-name">Gold</div></div>
-      <div class="swatch"><div class="chip" style="background:#FAF6EE;border:1px solid #D4BC82"></div><div class="chip-label">#FAF6EE</div><div class="chip-name">Ivory</div></div>
-      <div class="swatch"><div class="chip" style="background:#8B7355"></div><div class="chip-label">#8B7355</div><div class="chip-name">Taupe</div></div>
-    </div>
-  </div>
-
-  <!-- TYPOGRAPHY -->
-  <div class="sg-block">
-    <p class="sg-title">Typography</p>
-    <div class="type-sample">
-      <p class="type-meta">Playfair Display 700 — H1 / Hero</p>
-      <p style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;line-height:1.2;color:var(--dark)">Lighting restored with care.</p>
-    </div>
-    <div class="type-sample">
-      <p class="type-meta">Playfair Display 400 italic — H2 / Subheading</p>
-      <p style="font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic;color:var(--taupe)">Expert repair for every fixture.</p>
-    </div>
-    <div class="type-sample">
-      <p class="type-meta">Inter 400 — Body</p>
-      <p style="font-size:1rem;line-height:1.8;color:var(--dark);max-width:540px">From rewiring vintage table lamps to restoring ornate chandeliers, we handle every job with the attention to detail it deserves.</p>
-    </div>
-    <div class="type-sample">
-      <p class="type-meta">Inter 500 uppercase — Label / Nav</p>
-      <p style="font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe)">Our Services</p>
-    </div>
-  </div>
-
-  <!-- BUTTONS -->
-  <div class="sg-block">
-    <p class="sg-title">Buttons</p>
-    <div class="btn-row">
-      <button class="btn-primary">Schedule a Drop-off</button>
-      <button class="btn-outline">Learn More</button>
-      <button class="btn-brass">Get a Free Estimate</button>
-    </div>
-  </div>
-
-  <!-- CARDS -->
-  <div class="sg-block">
-    <p class="sg-title">Service Cards</p>
-    <div class="card-row">
-      <div class="card">
-        <div class="card-icon"></div>
-        <h3>Lamp Rewire & Repair</h3>
-        <p>Full rewiring and socket replacement for table lamps, floor lamps, and wall sconces.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon"></div>
-        <h3>Antiques & Vintage</h3>
-        <p>Careful restoration of antique and vintage fixtures while preserving their original character.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon"></div>
-        <h3>Chandelier Repair</h3>
-        <p>Full-service chandelier inspection, rewiring, and crystal or shade replacement.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider" style="max-width:960px;margin:0 auto 0">
-
-<!-- HERO POC -->
-<div class="hero">
-  <div class="hero-inner">
-    <p class="hero-eyebrow">Los Angeles, CA</p>
-    <h1>Bringing your fixtures<br>back to <em>life.</em></h1>
-    <p>Expert lamp rewiring, antique restoration, and chandelier repair — handled by a head technician who takes the time to get it right.</p>
-    <div class="hero-actions">
-      <button class="btn-primary">Schedule a Drop-off</button>
-      <button class="btn-outline" style="color:var(--ivory);border-color:var(--ivory)">Our Services</button>
-    </div>
-  </div>
-</div>
-
-<!-- SERVICES STRIP -->
-<div class="services-strip">
-  <section style="padding:0">
-    <div class="service-item">
-      <h3>Lamp Rewire & Repair</h3>
-      <p>Table lamps, floor lamps, and sconces rewired to code.</p>
-    </div>
-    <div class="service-item">
-      <h3>Antiques & Vintage</h3>
-      <p>Sensitive restoration that honors the original craftsmanship.</p>
-    </div>
-    <div class="service-item">
-      <h3>Chandelier Repair</h3>
-      <p>Full inspection, rewiring, and parts replacement.</p>
-    </div>
-  </section>
-</div>
-
-<!-- FAQ PREVIEW -->
-<section>
-  <p class="section-label">FAQ Preview</p>
-  <div class="faq-item">
-    <p class="faq-q">Do you offer pickup or delivery?</p>
-    <p class="faq-a">We are a drop-off service only. Please bring your fixture directly to our shop — we do not offer pickup or delivery at this time.</p>
-  </div>
-  <div class="faq-item">
-    <p class="faq-q">How do I get started?</p>
-    <p class="faq-a">Just give us a call to schedule your drop-off. We'll find a convenient time and make sure we're ready for your piece when you arrive.</p>
-  </div>
-  <div class="faq-item">
-    <p class="faq-q">How long will my repair take?</p>
-    <p class="faq-a">Most repairs have an estimated turnaround of 2 days. After your fixture is assessed, our head technician will call you personally to discuss the repair and timeline.</p>
-  </div>
-  <div class="faq-item">
-    <p class="faq-q">Is there a fee for an estimate?</p>
-    <p class="faq-a">Estimates are completely free and come with no commitment. We'll assess your fixture and give you a full breakdown before any work begins.</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p><span>LampRewire.com</span> &nbsp;·&nbsp; Los Angeles, CA &nbsp;·&nbsp; Phone & email coming soon</p>
+  <p class="footer-copy">&copy; 2026 LampRewire.com &nbsp;·&nbsp; New York, NY</p>
 </footer>
 
 </body>

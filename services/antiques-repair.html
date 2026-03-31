@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antiques & Vintage Repair — LampRewire.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--dark:#2B2520;--brass:#B8860B;--gold:#E8C97A;--ivory:#FAF6EE;--taupe:#8B7355;--border:#D4BC82;--white:#ffffff}
+body{font-family:'Inter',sans-serif;color:var(--dark);background:var(--ivory)}
+nav{background:var(--dark);padding:1.1rem 4%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.logo{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--gold);letter-spacing:.02em;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--ivory);font-size:.78rem;text-decoration:none;letter-spacing:.08em;text-transform:uppercase;opacity:.8;transition:all .2s}
+.nav-links a:hover{opacity:1;color:var(--gold)}
+.nav-cta{background:var(--brass);color:var(--ivory) !important;padding:.45rem 1.1rem;border-radius:2px;opacity:1 !important}
+.nav-cta:hover{background:#9a7009 !important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ivory);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200}
+.overlay.open{display:block}
+.offcanvas{position:fixed;top:0;right:0;height:100%;width:260px;background:var(--dark);z-index:201;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column;padding:2rem 1.5rem}
+.offcanvas.open{transform:translateX(0)}
+.offcanvas-close{align-self:flex-end;background:none;border:none;cursor:pointer;margin-bottom:2rem;padding:4px}
+.offcanvas-close span{display:block;width:22px;height:2px;background:var(--ivory);border-radius:2px}
+.offcanvas-close span:nth-child(1){transform:translateY(1px) rotate(45deg)}
+.offcanvas-close span:nth-child(2){transform:translateY(-1px) rotate(-45deg)}
+.offcanvas a{color:var(--ivory);font-size:.85rem;text-decoration:none;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.07);opacity:.8;text-align:left;transition:all .2s}
+.offcanvas a:hover{opacity:1;color:var(--gold)}
+.offcanvas a:last-child{border-bottom:none;color:var(--gold);opacity:1;margin-top:1rem}
+.page-hero{background:var(--dark);padding:6rem 4% 5rem;text-align:center}
+.page-hero-inner{max-width:680px;margin:0 auto}
+.eyebrow{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.4rem);color:var(--ivory);line-height:1.2;margin-bottom:1.25rem}
+.page-hero h1 em{color:var(--gold);font-style:italic}
+.page-hero p{font-size:1rem;color:#c0b09a;line-height:1.85;max-width:500px;margin:0 auto}
+.gold-bar{height:4px;background:var(--gold)}
+.breadcrumb{max-width:960px;margin:0 auto;padding:1.25rem 4%;display:flex;gap:.5rem;align-items:center}
+.breadcrumb a{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--taupe);text-decoration:none}
+.breadcrumb a:hover{color:var(--brass)}
+.breadcrumb span{font-size:.75rem;color:var(--border)}
+.breadcrumb p{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dark)}
+.intro{max-width:960px;margin:0 auto;padding:4rem 4%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.section-label{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--taupe);margin-bottom:.75rem}
+.intro h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.1rem);color:var(--dark);margin-bottom:1.25rem;line-height:1.25}
+.intro p{font-size:.95rem;color:var(--taupe);line-height:1.85;margin-bottom:1rem}
+.intro p:last-child{margin-bottom:0}
+.intro-aside{display:flex;flex-direction:column;gap:1rem}
+.aside-card{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:4px;padding:1.25rem 1.5rem}
+.aside-card h4{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--dark);margin-bottom:.35rem}
+.aside-card p{font-size:.82rem;color:var(--taupe);line-height:1.6}
+.included{background:var(--white);border-top:1px solid var(--border);padding:5rem 4%}
+.included-inner{max-width:960px;margin:0 auto}
+.included-inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.1rem);color:var(--dark);margin-bottom:3rem;line-height:1.25}
+.included-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
+.included-item{padding:1.5rem;border:1px solid var(--border);border-radius:4px;background:var(--ivory)}
+.included-num{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--gold);margin-bottom:.75rem;line-height:1}
+.included-item h3{font-family:'Playfair Display',serif;font-size:1rem;color:var(--dark);margin-bottom:.4rem}
+.included-item p{font-size:.82rem;color:var(--taupe);line-height:1.65}
+.process{background:var(--dark);padding:5rem 4%}
+.process-inner{max-width:960px;margin:0 auto}
+.process-inner .section-label{color:var(--gold)}
+.process-inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.1rem);color:var(--ivory);margin-bottom:3rem;line-height:1.25}
+.steps{display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:60px 1fr;gap:1.5rem;padding:1.75rem 0;border-bottom:1px solid rgba(255,255,255,.07);align-items:start}
+.step:last-child{border-bottom:none}
+.step-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);line-height:1}
+.step h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--ivory);margin-bottom:.4rem}
+.step p{font-size:.875rem;color:#a09080;line-height:1.75}
+.other{background:var(--ivory);border-top:1px solid var(--border);padding:5rem 4%}
+.other-inner{max-width:960px;margin:0 auto}
+.other-inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,1.8rem);color:var(--dark);margin-bottom:2rem}
+.other-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
+.other-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.75rem;text-decoration:none;transition:border-color .2s;display:block}
+.other-card:hover{border-color:var(--brass)}
+.other-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--dark);margin-bottom:.4rem}
+.other-card p{font-size:.82rem;color:var(--taupe);line-height:1.6}
+.other-card .arrow{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-top:.75rem;display:block}
+.cta-banner{background:var(--gold);padding:5rem 4%;text-align:center}
+.cta-banner h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--dark);margin-bottom:.75rem}
+.cta-banner p{font-size:.95rem;color:#5a4520;line-height:1.7;max-width:440px;margin:0 auto 2rem}
+.btn-dark{background:var(--dark);color:var(--gold);font-family:'Inter',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 2.25rem;border:none;border-radius:2px;cursor:pointer;transition:background .2s}
+.btn-dark:hover{background:#3d342d}
+footer{background:var(--dark);padding:3rem 4%;text-align:center}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gold);margin-bottom:.75rem}
+.footer-links{display:flex;justify-content:center;gap:2rem;list-style:none;margin-bottom:1.5rem;flex-wrap:wrap}
+.footer-links a{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#8a7a6a;text-decoration:none}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{font-size:.72rem;color:#5a4a3a;letter-spacing:.04em}
+@media(max-width:900px){.included-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){
+  .intro{grid-template-columns:1fr;gap:3rem}
+  .included-grid{grid-template-columns:1fr}
+  .other-cards{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="/">LampRewire</a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="#" style="color:var(--gold);opacity:1">Services</a></li>
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="ham" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="offcanvas" id="offcanvas">
+  <button class="offcanvas-close" onclick="closeMenu()"><span></span><span></span></button>
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+  <a href="#">Services</a>
+  <a href="#">FAQ</a>
+  <a href="#">Contact</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <p class="eyebrow">Our Services</p>
+    <h1>Antiques & <em>Vintage</em><br>Repair</h1>
+    <p>Sensitive restoration of antique and vintage lighting fixtures — preserving original character while bringing them safely back to life.</p>
+  </div>
+</div>
+<div class="gold-bar"></div>
+
+<div style="background:var(--ivory)">
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <a href="#">Services</a>
+    <span>/</span>
+    <p>Antiques & Vintage Repair</p>
+  </div>
+</div>
+
+<div style="background:var(--ivory)">
+  <div class="intro">
+    <div>
+      <p class="section-label">The service</p>
+      <h2>Old fixtures deserve more than a replacement.</h2>
+      <p>Antique and vintage lamps are often irreplaceable — whether it's a family heirloom, a flea market find, or a piece you've had for decades. With 25+ years of experience and UL certification, we know how to work with older fixtures without compromising what makes them special.</p>
+      <p>We take care to preserve original finishes, hardware, and materials wherever possible, only replacing what's necessary for safe operation.</p>
+    </div>
+    <div class="intro-aside">
+      <div class="aside-card">
+        <h4>Preservation first</h4>
+        <p>We assess every piece carefully and only replace what needs replacing — original parts are kept wherever safe to do so.</p>
+      </div>
+      <div class="aside-card">
+        <h4>Free estimate</h4>
+        <p>We'll examine your fixture and give you a full breakdown before touching anything. No commitment required.</p>
+      </div>
+      <div class="aside-card">
+        <h4>Personal consultation</h4>
+        <p>Our head technician calls you directly to discuss findings and options — you're never left guessing.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="included">
+  <div class="included-inner">
+    <p class="section-label">What's covered</p>
+    <h2>What we restore & repair.</h2>
+    <div class="included-grid">
+      <div class="included-item">
+        <div class="included-num">01</div>
+        <h3>Antique rewiring</h3>
+        <p>Full cord and socket replacement using period-appropriate cloth-covered wire where desired, routed to preserve the original look.</p>
+      </div>
+      <div class="included-item">
+        <div class="included-num">02</div>
+        <h3>Vintage socket restoration</h3>
+        <p>Original sockets repaired or replaced with matching hardware to maintain the fixture's authentic appearance.</p>
+      </div>
+      <div class="included-item">
+        <div class="included-num">03</div>
+        <h3>Hardware assessment</h3>
+        <p>Lamp bodies, harps, finials, and fittings inspected and tightened or sourced as needed.</p>
+      </div>
+      <div class="included-item">
+        <div class="included-num">04</div>
+        <h3>Safety modernization</h3>
+        <p>Updating wiring and components to meet current safety standards without altering the fixture's original aesthetic.</p>
+      </div>
+      <div class="included-item">
+        <div class="included-num">05</div>
+        <h3>Heirloom lamps</h3>
+        <p>Special care taken with sentimental pieces — we treat every antique as if it were our own.</p>
+      </div>
+      <div class="included-item">
+        <div class="included-num">06</div>
+        <h3>Safety inspection</h3>
+        <p>Every restored fixture is tested and inspected before pickup to ensure it's safe and fully functional.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="process">
+  <div class="process-inner">
+    <p class="section-label">How it works</p>
+    <h2>From drop-off to pickup<br>in 4 simple steps.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Call to schedule</h3>
+          <p>Give us a call and we'll set a convenient drop-off time for your piece.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Drop off your fixture</h3>
+          <p>Bring your antique or vintage lamp to our shop. Handle it as carefully as you always have — we'll take it from there.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h3>We assess & call you</h3>
+          <p>Our head technician carefully evaluates the piece and calls you personally to walk through what's needed, what can be preserved, and what it will cost.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <h3>Pick up your restored fixture</h3>
+          <p>Most restorations are completed within 2 days. We'll call when it's ready.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="other">
+  <div class="other-inner">
+    <p class="section-label">Also available</p>
+    <h2>We offer other services too.</h2>
+    <div class="other-cards">
+      <a href="/services/lamp-rewire" class="other-card">
+        <h3>Lamp Rewire & Repair</h3>
+        <p>Full rewiring and socket replacement for table lamps, floor lamps, and wall sconces.</p>
+        <span class="arrow">Learn more &rarr;</span>
+      </a>
+      <a href="/services/chandelier-repair" class="other-card">
+        <h3>Chandelier Repair</h3>
+        <p>Full-service chandelier inspection, rewiring, and crystal or shade replacement.</p>
+        <span class="arrow">Learn more &rarr;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="cta-banner">
+  <h2>Have a piece that needs restoring?</h2>
+  <p>Drop-off service only. Call us to schedule — estimates are free with no commitment required.</p>
+  <button class="btn-dark">Call to Schedule</button>
+</div>
+
+<footer>
+  <div class="footer-logo">LampRewire</div>
+  <ul class="footer-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <p class="footer-copy">&copy; 2026 LampRewire.com &nbsp;·&nbsp; New York, NY</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('ham').classList.toggle('open');
+  document.getElementById('offcanvas').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('ham').classList.remove('open');
+  document.getElementById('offcanvas').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+}
+</script>
+</body>
+</html>

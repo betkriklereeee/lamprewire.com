@@ -9,7 +9,6 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--dark:#2B2520;--brass:#B8860B;--gold:#E8C97A;--ivory:#FAF6EE;--taupe:#8B7355;--border:#D4BC82;--white:#ffffff}
 body{font-family:'Inter',sans-serif;color:var(--dark);background:var(--ivory)}
-
 nav{background:var(--dark);padding:1.1rem 4%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
 .logo{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--gold);letter-spacing:.02em;text-decoration:none}
 .nav-links{display:flex;gap:2rem;list-style:none}
@@ -33,7 +32,6 @@ nav{background:var(--dark);padding:1.1rem 4%;display:flex;justify-content:space-
 .offcanvas a{color:var(--ivory);font-size:.85rem;text-decoration:none;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.07);opacity:.8;text-align:left;transition:all .2s}
 .offcanvas a:hover{opacity:1;color:var(--gold)}
 .offcanvas a:last-child{border-bottom:none;color:var(--gold);opacity:1;margin-top:1rem}
-
 .page-hero{background:var(--dark);padding:6rem 4% 5rem;text-align:center}
 .page-hero-inner{max-width:680px;margin:0 auto}
 .eyebrow{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
@@ -41,7 +39,6 @@ nav{background:var(--dark);padding:1.1rem 4%;display:flex;justify-content:space-
 .page-hero h1 em{color:var(--gold);font-style:italic}
 .page-hero p{font-size:1rem;color:#c0b09a;line-height:1.85;max-width:500px;margin:0 auto}
 .gold-bar{height:4px;background:var(--gold)}
-
 .story{max-width:960px;margin:0 auto;padding:5rem 4%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
 .section-label{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--taupe);margin-bottom:.75rem}
 .story h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.1rem);color:var(--dark);margin-bottom:1.25rem;line-height:1.25}
@@ -51,7 +48,6 @@ nav{background:var(--dark);padding:1.1rem 4%;display:flex;justify-content:space-
 .cred-num{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--gold);line-height:1;margin-bottom:.4rem}
 .cred-label{font-size:.8rem;font-weight:500;color:var(--dark);margin-bottom:.25rem}
 .cred-sub{font-size:.8rem;color:var(--taupe);line-height:1.5}
-
 .values{background:var(--dark);padding:5rem 4%}
 .values-inner{max-width:960px;margin:0 auto}
 .values-inner .section-label{color:var(--gold)}
@@ -60,7 +56,6 @@ nav{background:var(--dark);padding:1.1rem 4%;display:flex;justify-content:space-
 .value-item{border-top:2px solid var(--gold);padding-top:1.25rem}
 .value-item h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--ivory);margin-bottom:.6rem}
 .value-item p{font-size:.85rem;color:#a09080;line-height:1.75}
-
 .area{background:var(--white);border-top:1px solid var(--border);padding:5rem 4%}
 .area-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .area-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.1rem);color:var(--dark);margin-bottom:1rem;line-height:1.25}
@@ -68,20 +63,17 @@ nav{background:var(--dark);padding:1.1rem 4%;display:flex;justify-content:space-
 .borough-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;width:100%}
 .borough{background:var(--ivory);border:1px solid var(--border);border-radius:4px;padding:1rem 1.25rem;font-family:'Playfair Display',serif;font-size:1rem;color:var(--dark)}
 .borough span{display:block;font-family:'Inter',sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--taupe);margin-top:.2rem}
-
 .cta-banner{background:var(--gold);padding:5rem 4%;text-align:center}
 .cta-banner h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--dark);margin-bottom:.75rem}
 .cta-banner p{font-size:.95rem;color:#5a4520;line-height:1.7;max-width:440px;margin:0 auto 2rem}
 .btn-dark{background:var(--dark);color:var(--gold);font-family:'Inter',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 2.25rem;border:none;border-radius:2px;cursor:pointer;transition:background .2s}
 .btn-dark:hover{background:#3d342d}
-
 footer{background:var(--dark);padding:3rem 4%;text-align:center}
 .footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gold);margin-bottom:.75rem}
 .footer-links{display:flex;justify-content:center;gap:2rem;list-style:none;margin-bottom:1.5rem;flex-wrap:wrap}
 .footer-links a{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#8a7a6a;text-decoration:none}
 .footer-links a:hover{color:var(--gold)}
 .footer-copy{font-size:.72rem;color:#5a4a3a;letter-spacing:.04em}
-
 @media(max-width:720px){
   .story{grid-template-columns:1fr;gap:3rem}
   .values-grid{grid-template-columns:1fr}
@@ -94,10 +86,10 @@ footer{background:var(--dark);padding:3rem 4%;text-align:center}
 <body>
 
 <nav>
-  <a class="logo" href="#">LampRewire</a>
+  <a class="logo" href="/">LampRewire</a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html" style="color:var(--gold);opacity:1">About</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about" style="color:var(--gold);opacity:1">About</a></li>
     <li><a href="#">Services</a></li>
     <li><a href="#">FAQ</a></li>
     <li><a href="#" class="nav-cta">Contact</a></li>
@@ -110,8 +102,8 @@ footer{background:var(--dark);padding:3rem 4%;text-align:center}
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 <div class="offcanvas" id="offcanvas">
   <button class="offcanvas-close" onclick="closeMenu()"><span></span><span></span></button>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
+  <a href="/">Home</a>
+  <a href="/about">About</a>
   <a href="#">Services</a>
   <a href="#">FAQ</a>
   <a href="#">Contact</a>
@@ -136,21 +128,9 @@ footer{background:var(--dark);padding:3rem 4%;text-align:center}
       <p>We believe a well-made lamp deserves a well-made repair. No shortcuts, no guesswork — just the kind of work that lasts.</p>
     </div>
     <div class="credentials">
-      <div class="cred-card">
-        <div class="cred-num">25+</div>
-        <div class="cred-label">Years of experience</div>
-        <div class="cred-sub">Over two decades repairing and restoring lighting fixtures across New York City.</div>
-      </div>
-      <div class="cred-card">
-        <div class="cred-num">UL</div>
-        <div class="cred-label">Certified technician</div>
-        <div class="cred-sub">UL certification means every repair meets rigorous safety and quality standards.</div>
-      </div>
-      <div class="cred-card">
-        <div class="cred-num">$0</div>
-        <div class="cred-label">Estimate cost</div>
-        <div class="cred-sub">Free assessments with no commitment — always. You decide before any work begins.</div>
-      </div>
+      <div class="cred-card"><div class="cred-num">25+</div><div class="cred-label">Years of experience</div><div class="cred-sub">Over two decades repairing and restoring lighting fixtures across New York City.</div></div>
+      <div class="cred-card"><div class="cred-num">UL</div><div class="cred-label">Certified technician</div><div class="cred-sub">UL certification means every repair meets rigorous safety and quality standards.</div></div>
+      <div class="cred-card"><div class="cred-num">$0</div><div class="cred-label">Estimate cost</div><div class="cred-sub">Free assessments with no commitment — always. You decide before any work begins.</div></div>
     </div>
   </div>
 </div>
@@ -160,18 +140,9 @@ footer{background:var(--dark);padding:3rem 4%;text-align:center}
     <p class="section-label">How we work</p>
     <h2>What you can expect<br>from us, every time.</h2>
     <div class="values-grid">
-      <div class="value-item">
-        <h3>Honest assessment</h3>
-        <p>After drop-off, our head technician personally evaluates your fixture and calls you directly to walk through what's needed — no surprises.</p>
-      </div>
-      <div class="value-item">
-        <h3>Fast turnaround</h3>
-        <p>Most repairs are completed within 2 days. We respect your time and keep you informed every step of the way.</p>
-      </div>
-      <div class="value-item">
-        <h3>No pressure</h3>
-        <p>Estimates are free and come with zero commitment. If the repair doesn't make sense for your piece, we'll tell you that too.</p>
-      </div>
+      <div class="value-item"><h3>Honest assessment</h3><p>After drop-off, our head technician personally evaluates your fixture and calls you directly to walk through what's needed — no surprises.</p></div>
+      <div class="value-item"><h3>Fast turnaround</h3><p>Most repairs are completed within 2 days. We respect your time and keep you informed every step of the way.</p></div>
+      <div class="value-item"><h3>No pressure</h3><p>Estimates are free and come with zero commitment. If the repair doesn't make sense for your piece, we'll tell you that too.</p></div>
     </div>
   </div>
 </div>
@@ -202,8 +173,8 @@ footer{background:var(--dark);padding:3rem 4%;text-align:center}
 <footer>
   <div class="footer-logo">LampRewire</div>
   <ul class="footer-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
     <li><a href="#">Services</a></li>
     <li><a href="#">FAQ</a></li>
     <li><a href="#">Contact</a></li>

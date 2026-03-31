@@ -50,7 +50,9 @@ nav{background:var(--dark);padding:1.1rem 4%;display:flex;justify-content:space-
 .section-label{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--taupe);margin-bottom:.75rem}
 .section-heading{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--dark);margin-bottom:.75rem}
 .section-sub{font-size:.95rem;color:var(--taupe);line-height:1.7;max-width:480px;margin-bottom:3rem}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
+@media(max-width:900px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){.cards{grid-template-columns:1fr}}
 .card{border:1px solid var(--border);border-radius:4px;padding:2rem;background:var(--ivory);transition:border-color .2s}
 .card:hover{border-color:var(--brass)}
 .card-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);margin-bottom:1rem;line-height:1}

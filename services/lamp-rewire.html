@@ -1,21 +1,34 @@
-<!DOCTYPE html>
+<div class="footer-contact">
+    <a href="tel:+12124265294">(212) 426-5294</a>
+    <a href="mailto:midtownlightingrepair@gmail.com<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lamp Rewire & Repair — LampRewire.com</title>
+<title>Chandelier Repair — LampRewire.com</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YLV2HKYN57"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YLV2HKYN57');</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--dark:#2B2520;--brass:#B8860B;--gold:#E8C97A;--ivory:#FAF6EE;--taupe:#8B7355;--border:#D4BC82;--white:#ffffff}
 body{font-family:'Inter',sans-serif;color:var(--dark);background:var(--ivory)}
 nav{background:var(--dark);padding:1.1rem 4%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
 .logo{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--gold);letter-spacing:.02em;text-decoration:none}
-.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
 .nav-links a{color:var(--ivory);font-size:.78rem;text-decoration:none;letter-spacing:.08em;text-transform:uppercase;opacity:.8;transition:all .2s}
 .nav-links a:hover{opacity:1;color:var(--gold)}
 .nav-cta{background:var(--brass);color:var(--ivory) !important;padding:.45rem 1.1rem;border-radius:2px;opacity:1 !important}
 .nav-cta:hover{background:#9a7009 !important}
+.nav-dropdown{position:relative}
+.nav-dropdown>a{display:flex;align-items:center;gap:.3rem;cursor:default}
+.nav-dropdown>a::after{content:'';display:inline-block;width:6px;height:6px;border-right:1.5px solid var(--ivory);border-bottom:1.5px solid var(--ivory);transform:rotate(45deg) translateY(-2px);opacity:.6;transition:transform .2s}
+.nav-dropdown:hover>a::after{transform:rotate(-135deg) translateY(-2px);opacity:1}
+.dropdown-menu{position:absolute;top:calc(100% + .75rem);left:50%;transform:translateX(-50%);background:var(--dark);border:1px solid rgba(232,201,122,.2);border-radius:4px;padding:.5rem 0;min-width:220px;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+.nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible}
+.dropdown-menu a{display:block;padding:.65rem 1.25rem;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:#c0b09a;text-decoration:none;opacity:1;transition:all .2s;white-space:nowrap}
+.dropdown-menu a:hover{color:var(--gold);background:rgba(255,255,255,.04)}
+.dropdown-menu::before{content:'';position:absolute;top:-6px;left:50%;width:10px;height:10px;background:var(--dark);border-left:1px solid rgba(232,201,122,.2);border-top:1px solid rgba(232,201,122,.2);transform:translateX(-50%) rotate(45deg)}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:var(--ivory);border-radius:2px;transition:all .3s}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -23,17 +36,18 @@ nav{background:var(--dark);padding:1.1rem 4%;display:flex;justify-content:space-
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200}
 .overlay.open{display:block}
-.offcanvas{position:fixed;top:0;right:0;height:100%;width:260px;background:var(--dark);z-index:201;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column;padding:2rem 1.5rem}
+.offcanvas{position:fixed;top:0;right:0;height:100%;width:260px;background:var(--dark);z-index:201;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column;padding:2rem 1.5rem;overflow-y:auto}
 .offcanvas.open{transform:translateX(0)}
 .offcanvas-close{align-self:flex-end;background:none;border:none;cursor:pointer;margin-bottom:2rem;padding:4px}
 .offcanvas-close span{display:block;width:22px;height:2px;background:var(--ivory);border-radius:2px}
 .offcanvas-close span:nth-child(1){transform:translateY(1px) rotate(45deg)}
 .offcanvas-close span:nth-child(2){transform:translateY(-1px) rotate(-45deg)}
-.offcanvas a{color:var(--ivory);font-size:.85rem;text-decoration:none;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.07);opacity:.8;text-align:left;transition:all .2s}
+.offcanvas a{color:var(--ivory);font-size:.85rem;text-decoration:none;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.07);opacity:.8;text-align:left;transition:all .2s;display:block}
 .offcanvas a:hover{opacity:1;color:var(--gold)}
-.offcanvas a:last-child{border-bottom:none;color:var(--gold);opacity:1;margin-top:1rem}
-
-/* PAGE HERO */
+.offcanvas-section-label{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--taupe);padding:.85rem 0 .35rem;border-bottom:none !important;opacity:1 !important;cursor:default}
+.offcanvas-child{padding-left:1rem !important;font-size:.78rem !important;color:#a09080 !important;border-bottom:1px solid rgba(255,255,255,.04) !important}
+.offcanvas-child:hover{color:var(--gold) !important;opacity:1 !important}
+.offcanvas-contact{border-bottom:none !important;color:var(--gold) !important;opacity:1 !important;margin-top:1rem}
 .page-hero{background:var(--dark);padding:6rem 4% 5rem;text-align:center}
 .page-hero-inner{max-width:680px;margin:0 auto}
 .eyebrow{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
@@ -41,15 +55,11 @@ nav{background:var(--dark);padding:1.1rem 4%;display:flex;justify-content:space-
 .page-hero h1 em{color:var(--gold);font-style:italic}
 .page-hero p{font-size:1rem;color:#c0b09a;line-height:1.85;max-width:500px;margin:0 auto}
 .gold-bar{height:4px;background:var(--gold)}
-
-/* BREADCRUMB */
 .breadcrumb{max-width:960px;margin:0 auto;padding:1.25rem 4%;display:flex;gap:.5rem;align-items:center}
 .breadcrumb a{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--taupe);text-decoration:none}
 .breadcrumb a:hover{color:var(--brass)}
 .breadcrumb span{font-size:.75rem;color:var(--border)}
 .breadcrumb p{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dark)}
-
-/* INTRO */
 .intro{max-width:960px;margin:0 auto;padding:4rem 4%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
 .section-label{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--taupe);margin-bottom:.75rem}
 .intro h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.1rem);color:var(--dark);margin-bottom:1.25rem;line-height:1.25}
@@ -59,8 +69,6 @@ nav{background:var(--dark);padding:1.1rem 4%;display:flex;justify-content:space-
 .aside-card{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:4px;padding:1.25rem 1.5rem}
 .aside-card h4{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--dark);margin-bottom:.35rem}
 .aside-card p{font-size:.82rem;color:var(--taupe);line-height:1.6}
-
-/* WHAT'S INCLUDED */
 .included{background:var(--white);border-top:1px solid var(--border);padding:5rem 4%}
 .included-inner{max-width:960px;margin:0 auto}
 .included-inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.1rem);color:var(--dark);margin-bottom:3rem;line-height:1.25}
@@ -69,20 +77,16 @@ nav{background:var(--dark);padding:1.1rem 4%;display:flex;justify-content:space-
 .included-num{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--gold);margin-bottom:.75rem;line-height:1}
 .included-item h3{font-family:'Playfair Display',serif;font-size:1rem;color:var(--dark);margin-bottom:.4rem}
 .included-item p{font-size:.82rem;color:var(--taupe);line-height:1.65}
-
-/* PROCESS */
 .process{background:var(--dark);padding:5rem 4%}
 .process-inner{max-width:960px;margin:0 auto}
 .process-inner .section-label{color:var(--gold)}
 .process-inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.1rem);color:var(--ivory);margin-bottom:3rem;line-height:1.25}
-.steps{display:flex;flex-direction:column;gap:0}
+.steps{display:flex;flex-direction:column}
 .step{display:grid;grid-template-columns:60px 1fr;gap:1.5rem;padding:1.75rem 0;border-bottom:1px solid rgba(255,255,255,.07);align-items:start}
 .step:last-child{border-bottom:none}
 .step-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);line-height:1}
 .step h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--ivory);margin-bottom:.4rem}
 .step p{font-size:.875rem;color:#a09080;line-height:1.75}
-
-/* OTHER SERVICES */
 .other{background:var(--ivory);border-top:1px solid var(--border);padding:5rem 4%}
 .other-inner{max-width:960px;margin:0 auto}
 .other-inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,1.8rem);color:var(--dark);margin-bottom:2rem}
@@ -92,227 +96,136 @@ nav{background:var(--dark);padding:1.1rem 4%;display:flex;justify-content:space-
 .other-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--dark);margin-bottom:.4rem}
 .other-card p{font-size:.82rem;color:var(--taupe);line-height:1.6}
 .other-card .arrow{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-top:.75rem;display:block}
-
-/* CTA */
 .cta-banner{background:var(--gold);padding:5rem 4%;text-align:center}
 .cta-banner h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--dark);margin-bottom:.75rem}
 .cta-banner p{font-size:.95rem;color:#5a4520;line-height:1.7;max-width:440px;margin:0 auto 2rem}
 .btn-dark{background:var(--dark);color:var(--gold);font-family:'Inter',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 2.25rem;border:none;border-radius:2px;cursor:pointer;transition:background .2s}
 .btn-dark:hover{background:#3d342d}
-
 footer{background:var(--dark);padding:3rem 4%;text-align:center}
 .footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gold);margin-bottom:.75rem}
 .footer-links{display:flex;justify-content:center;gap:2rem;list-style:none;margin-bottom:1.5rem;flex-wrap:wrap}
 .footer-links a{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#8a7a6a;text-decoration:none}
 .footer-links a:hover{color:var(--gold)}
+.footer-contact{display:flex;justify-content:center;gap:2rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.footer-contact a{font-size:.78rem;color:#a09080;text-decoration:none}
+.footer-contact a:hover{color:var(--gold)}
 .footer-copy{font-size:.72rem;color:#5a4a3a;letter-spacing:.04em}
-
-@media(max-width:720px){
-  .intro{grid-template-columns:1fr;gap:3rem}
-  .included-grid{grid-template-columns:1fr}
-  .other-cards{grid-template-columns:1fr}
-  .nav-links{display:none}
-  .hamburger{display:flex}
-}
-@media(max-width:900px){
-  .included-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
+@media(max-width:900px){.included-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.intro{grid-template-columns:1fr;gap:3rem}.included-grid{grid-template-columns:1fr}.other-cards{grid-template-columns:1fr}.nav-links{display:none}.hamburger{display:flex}}
 </style>
 </head>
 <body>
-
 <nav>
   <a class="logo" href="/">LampRewire</a>
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
     <li><a href="/about">About</a></li>
-    <li><a href="#" style="color:var(--gold);opacity:1">Services</a></li>
-    <li><a href="#">FAQ</a></li>
-    <li><a href="#" class="nav-cta">Contact</a></li>
+    <li class="nav-dropdown">
+      <a href="#" style="color:var(--gold);opacity:1">Services</a>
+      <div class="dropdown-menu">
+        <a href="/services/lamp-rewire">Lamp Rewire & Repair</a>
+        <a href="/services/antiques-repair">Antiques & Vintage Repair</a>
+        <a href="/services/chandelier-repair">Chandelier Repair</a>
+      </div>
+    </li>
+    <li><a href="/faq">FAQ</a></li>
+    <li><a href="/contact" class="nav-cta">Contact</a></li>
   </ul>
-  <button class="hamburger" id="ham" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="hamburger" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
-
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 <div class="offcanvas" id="offcanvas">
   <button class="offcanvas-close" onclick="closeMenu()"><span></span><span></span></button>
   <a href="/">Home</a>
   <a href="/about">About</a>
-  <a href="#">Services</a>
-  <a href="#">FAQ</a>
-  <a href="#">Contact</a>
+  <span class="offcanvas-section-label">Services</span>
+  <a href="/services/lamp-rewire" class="offcanvas-child">Lamp Rewire & Repair</a>
+  <a href="/services/antiques-repair" class="offcanvas-child">Antiques & Vintage Repair</a>
+  <a href="/services/chandelier-repair" class="offcanvas-child">Chandelier Repair</a>
+  <a href="/faq">FAQ</a>
+  <a href="/contact" class="offcanvas-contact">Contact</a>
 </div>
-
 <div class="page-hero">
   <div class="page-hero-inner">
     <p class="eyebrow">Our Services</p>
-    <h1>Lamp Rewire<br>& <em>Repair</em></h1>
-    <p>Safe, professional rewiring for table lamps, floor lamps, and wall sconces — done right by a UL certified technician with 25+ years of experience.</p>
+    <h1>Chandelier<br><em>Repair</em></h1>
+    <p>Full-service chandelier inspection, rewiring, and parts replacement — handled with the care and precision these pieces deserve.</p>
   </div>
 </div>
 <div class="gold-bar"></div>
-
-<div style="background:var(--ivory)">
-  <div class="breadcrumb">
-    <a href="/">Home</a>
-    <span>/</span>
-    <a href="#">Services</a>
-    <span>/</span>
-    <p>Lamp Rewire & Repair</p>
-  </div>
-</div>
-
+<div style="background:var(--ivory)"><div class="breadcrumb"><a href="/">Home</a><span>/</span><a href="#">Services</a><span>/</span><p>Chandelier Repair</p></div></div>
 <div style="background:var(--ivory)">
   <div class="intro">
     <div>
       <p class="section-label">The service</p>
-      <h2>When your lamp stops working, don't replace it.</h2>
-      <p>Most lamps — even older or antique ones — can be fully restored with a proper rewire. Worn insulation, faulty sockets, and outdated wiring are all fixable, and often at a fraction of the cost of a replacement.</p>
-      <p>We handle everything from simple socket swaps to full cord replacements, making sure every job meets current safety standards before it leaves our shop.</p>
+      <h2>Chandeliers are complex. We know how to handle them.</h2>
+      <p>A chandelier isn't just a light fixture — it's often the centerpiece of a room. Whether it's a grand multi-arm piece with dozens of crystals or a simpler vintage fixture that's stopped working, we have the experience to bring it back to full operation.</p>
+      <p>With 25+ years in the trade and UL certification, we handle chandeliers of every size and style — assessing each one carefully before recommending any repair.</p>
     </div>
     <div class="intro-aside">
-      <div class="aside-card">
-        <h4>Drop-off only</h4>
-        <p>Bring your lamp directly to our shop. Call ahead to schedule your drop-off time.</p>
-      </div>
-      <div class="aside-card">
-        <h4>Free estimate</h4>
-        <p>We assess your lamp and give you a full cost breakdown before any work begins — no commitment required.</p>
-      </div>
-      <div class="aside-card">
-        <h4>2-day turnaround</h4>
-        <p>Most rewires are completed within 2 business days. Our head technician will call you to discuss the repair.</p>
-      </div>
+      <div class="aside-card"><h4>All sizes welcome</h4><p>From small dining room fixtures to large multi-tiered chandeliers — bring it in and we'll assess it.</p></div>
+      <div class="aside-card"><h4>Free estimate</h4><p>Full cost breakdown before any work begins. No commitment required.</p></div>
+      <div class="aside-card"><h4>Head technician consult</h4><p>Our head technician personally evaluates every chandelier and calls you to discuss the repair in detail.</p></div>
     </div>
   </div>
 </div>
-
 <div class="included">
   <div class="included-inner">
     <p class="section-label">What's covered</p>
-    <h2>What we repair & replace.</h2>
+    <h2>What we inspect, repair & replace.</h2>
     <div class="included-grid">
-      <div class="included-item">
-        <div class="included-num">01</div>
-        <h3>Full cord replacement</h3>
-        <p>Old or frayed cords replaced end-to-end with new UL-rated wire, properly routed through the lamp body.</p>
-      </div>
-      <div class="included-item">
-        <div class="included-num">02</div>
-        <h3>Socket replacement</h3>
-        <p>Worn, cracked, or corroded sockets swapped out for new ones — including keyless, turn-knob, and pull-chain styles.</p>
-      </div>
-      <div class="included-item">
-        <div class="included-num">03</div>
-        <h3>Switch repair</h3>
-        <p>Inline switches, foot switches, and built-in switches repaired or replaced as needed.</p>
-      </div>
-      <div class="included-item">
-        <div class="included-num">04</div>
-        <h3>Plug replacement</h3>
-        <p>Damaged or two-prong plugs replaced with properly polarized, grounded plugs where applicable.</p>
-      </div>
-      <div class="included-item">
-        <div class="included-num">05</div>
-        <h3>Multi-socket wiring</h3>
-        <p>Floor lamps and torchieres with multiple sockets re-wired safely for proper load distribution.</p>
-      </div>
-      <div class="included-item">
-        <div class="included-num">06</div>
-        <h3>Safety inspection</h3>
-        <p>Every lamp is inspected before and after repair to make sure it leaves our shop safe and fully functional.</p>
-      </div>
+      <div class="included-item"><div class="included-num">01</div><h3>Full rewiring</h3><p>Complete chandelier rewiring — all arms, canopy, and main feed — done safely and to current electrical code.</p></div>
+      <div class="included-item"><div class="included-num">02</div><h3>Socket replacement</h3><p>Individual arm sockets inspected and replaced as needed, matching original style where possible.</p></div>
+      <div class="included-item"><div class="included-num">03</div><h3>Crystal & shade replacement</h3><p>Missing or damaged crystals and shades sourced and replaced to restore the fixture's original look.</p></div>
+      <div class="included-item"><div class="included-num">04</div><h3>Canopy & chain inspection</h3><p>Mounting canopy, chain, and support hardware checked for safety and integrity.</p></div>
+      <div class="included-item"><div class="included-num">05</div><h3>Arm & frame repair</h3><p>Loose, bent, or broken arms tightened or repaired to restore structural stability.</p></div>
+      <div class="included-item"><div class="included-num">06</div><h3>Safety inspection</h3><p>Every chandelier is fully tested before pickup — we won't release a fixture we wouldn't hang in our own home.</p></div>
     </div>
   </div>
 </div>
-
 <div class="process">
   <div class="process-inner">
     <p class="section-label">How it works</p>
     <h2>From drop-off to pickup<br>in 4 simple steps.</h2>
     <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div>
-          <h3>Call to schedule</h3>
-          <p>Give us a call and we'll set a convenient drop-off time. No walk-ins required, though we'll do our best to accommodate.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div>
-          <h3>Drop off your lamp</h3>
-          <p>Bring your lamp to our shop at the scheduled time. We'll take it from there.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div>
-          <h3>We assess & call you</h3>
-          <p>Our head technician personally evaluates your lamp and calls you to walk through exactly what's needed and what it will cost — before any work begins.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <div>
-          <h3>Pick up your restored lamp</h3>
-          <p>Once the repair is complete — typically within 2 days — we'll let you know it's ready for pickup.</p>
-        </div>
-      </div>
+      <div class="step"><div class="step-num">1</div><div><h3>Call to schedule</h3><p>Give us a call to arrange your drop-off. For larger chandeliers, let us know in advance so we can prepare.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div><h3>Drop off your chandelier</h3><p>Bring the fixture to our shop. If it's already been taken down, bring all parts including chain, canopy, and any loose crystals.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div><h3>We assess & call you</h3><p>Our head technician goes through the fixture arm by arm and calls you personally to walk through the findings, options, and cost — before any work begins.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div><h3>Pick up your restored chandelier</h3><p>Most repairs are completed within 2 days. We'll call when it's ready and make sure everything is carefully wrapped for transport.</p></div></div>
     </div>
   </div>
 </div>
-
 <div class="other">
   <div class="other-inner">
     <p class="section-label">Also available</p>
     <h2>We offer other services too.</h2>
     <div class="other-cards">
-      <a href="/services/antiques-repair" class="other-card">
-        <h3>Antiques & Vintage Repair</h3>
-        <p>Careful restoration of antique and vintage fixtures while preserving their original character.</p>
-        <span class="arrow">Learn more &rarr;</span>
-      </a>
-      <a href="/services/chandelier-repair" class="other-card">
-        <h3>Chandelier Repair</h3>
-        <p>Full-service chandelier inspection, rewiring, and crystal or shade replacement.</p>
-        <span class="arrow">Learn more &rarr;</span>
-      </a>
+      <a href="/services/lamp-rewire" class="other-card"><h3>Lamp Rewire & Repair</h3><p>Full rewiring and socket replacement for table lamps, floor lamps, and wall sconces.</p><span class="arrow">Learn more &rarr;</span></a>
+      <a href="/services/antiques-repair" class="other-card"><h3>Antiques & Vintage Repair</h3><p>Careful restoration of antique and vintage fixtures while preserving their original character.</p><span class="arrow">Learn more &rarr;</span></a>
     </div>
   </div>
 </div>
-
 <div class="cta-banner">
-  <h2>Ready to bring your lamp back to life?</h2>
+  <h2>Have a chandelier that needs attention?</h2>
   <p>Drop-off service only. Call us to schedule — estimates are free with no commitment required.</p>
-  <button class="btn-dark">Call to Schedule</button>
+  <a href="tel:+12124265294"><button class="btn-dark">Call (212) 426-5294</button></a>
 </div>
-
 <footer>
   <div class="footer-logo">LampRewire</div>
   <ul class="footer-links">
     <li><a href="/">Home</a></li>
     <li><a href="/about">About</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">FAQ</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="/services/lamp-rewire">Lamp Rewire & Repair</a></li>
+    <li><a href="/services/antiques-repair">Antiques & Vintage</a></li>
+    <li><a href="/services/chandelier-repair">Chandelier Repair</a></li>
+    <li><a href="/faq">FAQ</a></li>
+    <li><a href="/contact">Contact</a></li>
   </ul>
   <p class="footer-copy">&copy; 2026 LampRewire.com &nbsp;·&nbsp; New York, NY</p>
 </footer>
-
 <script>
-function toggleMenu(){
-  document.getElementById('ham').classList.toggle('open');
-  document.getElementById('offcanvas').classList.toggle('open');
-  document.getElementById('overlay').classList.toggle('open');
-}
-function closeMenu(){
-  document.getElementById('ham').classList.remove('open');
-  document.getElementById('offcanvas').classList.remove('open');
-  document.getElementById('overlay').classList.remove('open');
-}
+function toggleMenu(){document.getElementById('ham').classList.toggle('open');document.getElementById('offcanvas').classList.toggle('open');document.getElementById('overlay').classList.toggle('open')}
+function closeMenu(){document.getElementById('ham').classList.remove('open');document.getElementById('offcanvas').classList.remove('open');document.getElementById('overlay').classList.remove('open')}
 </script>
 </body>
 </html>
